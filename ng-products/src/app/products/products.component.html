@@ -4,6 +4,7 @@
     class="product-item"
     *ngFor="let product of products"
     (click)="selectProduct(product)"
+    [class.selected]="selectedProduct === product"
   >
     &nbsp;ID:
     {{
@@ -12,18 +13,30 @@
     &nbsp;&nbsp; Name:
     {{
       product.name
-    }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edit
+    }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    <span
+      *ngIf="selectedProduct === product"
+      (click)="deleteProduct(selectedProduct.id)"
+      >🗑</span
+    >
   </ul>
 </section>
 
-<div *ngIf="selectedProduct">
-  {{ selectedProduct.id }}
-</div>
-<div class="create-container">
-  <input
-    type="text"
-    (keyup.enter)="createProduct(productName.value)"
-    [formControl]="productName"
-  />
-</div>
-{{ productName.value }}
+<section class="inputs">
+  <div class="input">
+    <label>create: &nbsp;</label>
+    <input
+      type="text"
+      (keyup.enter)="createProduct(productName.value)"
+      [formControl]="productName"
+    />
+  </div>
+  <div *ngIf="selectedProduct" class="input">
+    <label>update: &nbsp;</label>
+    <input
+      type="text"
+      (keyup.enter)="updateProduct(productName.value)"
+      [(ngModel)]="selectedProduct.name"
+    />
+  </div>
+</section>

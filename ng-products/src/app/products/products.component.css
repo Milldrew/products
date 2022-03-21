@@ -2,14 +2,15 @@ h2 {
   text-align: center;
 }
 .product-item {
-  border: 1px solid black;
   padding: 5px 5px;
-  text-align: center;
+  text-align: left;
   background-color: #fff;
 }
 
+.selected {
+  background-color: #da2;
+}
 .item-container {
-  border: 1px solid red;
   width: 75%;
   padding: 20px 20px;
   display: flex;
@@ -17,7 +18,17 @@ h2 {
   background-color: #afafaf33;
 }
 
-.create-container {
-  border: 1px solid red;
+.input {
   padding: 2px 2px;
+  margin: 10px 0px;
+}
+
+.inputs {
+  display: flex;
+  width: 75%;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #9f9f3f33;
+  padding: 20px 20px;
 }
