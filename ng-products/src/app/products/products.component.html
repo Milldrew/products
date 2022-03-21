@@ -1,1 +1,21 @@
-<p>products works!</p>
+<section class="item-container">
+  <h2>Product List</h2>
+  <ul
+    class="product-item"
+    *ngFor="let product of products"
+    (click)="selectProduct(product)"
+  >
+    &nbsp;ID:
+    {{
+      product.id
+    }}
+    &nbsp;&nbsp; Name:
+    {{
+      product.name
+    }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edit
+  </ul>
+</section>
+
+<div *ngIf="selectedProduct">
+  {{ selectedProduct.id }}
+</div>

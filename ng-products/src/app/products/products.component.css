@@ -1,0 +1,18 @@
+h2 {
+  text-align: center;
+}
+.product-item {
+  border: 1px solid black;
+  padding: 5px 5px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.item-container {
+  border: 1px solid red;
+  width: 75%;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #afafaf33;
+}
