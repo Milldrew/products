@@ -1,7 +1,12 @@
 app-products {
+  border: 1px solid red;
   background-color: #efefef33;
   margin: 0px 0px;
   color: black;
   height: 100%;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
 }
