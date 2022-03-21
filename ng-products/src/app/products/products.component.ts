@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 export type Product = { id: number; name: string };
 
 @Component({
@@ -15,9 +16,16 @@ export class ProductsComponent implements OnInit {
   selectedProduct?: Product;
   constructor() {}
 
+  createProduct(productName: string) {
+    console.log(productName);
+    const id = Math.floor(Math.random() * 1000);
+    this.products.push({ id, name: productName });
+  }
+
   selectProduct(product: Product) {
     this.selectedProduct = product;
     console.log(product);
   }
   ngOnInit(): void {}
+  productName = new FormControl('');
 }

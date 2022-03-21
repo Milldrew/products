@@ -19,3 +19,11 @@
 <div *ngIf="selectedProduct">
   {{ selectedProduct.id }}
 </div>
+<div class="create-container">
+  <input
+    type="text"
+    (keyup.enter)="createProduct(productName.value)"
+    [formControl]="productName"
+  />
+</div>
+{{ productName.value }}
